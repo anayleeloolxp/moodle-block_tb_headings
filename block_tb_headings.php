@@ -106,10 +106,15 @@ class block_tb_headings extends block_base {
             $resposedata->data->block_title = get_string('displayname', 'block_tb_headings');
         }
         $this->title = $resposedata->data->block_title;
+        $autoslide = $resposedata->data->autoslide;
 
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_headings/js/jquery.min.js'));
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_headings/js/owl.carousel.js'));
-        $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_headings/js/owlslider.js'));
+        if($autoslide == 1){
+            $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_headings/js/owlslider-auto.js'));
+        }else{
+            $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_headings/js/owlslider.js'));
+        }
 
         $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_headings/css/owl.carousel.min.css'));
         $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_headings/css/owl.theme.default.min.css'));
