@@ -57,21 +57,21 @@ class block_tb_headings extends block_base {
 
         $leeloolxplicense = get_config('block_tb_headings')->license;
         $settingsjson = get_config('block_tb_headings')->settingsjson;
-        
+
         $resposedata = json_decode(base64_decode($settingsjson));
-        $mdata = $resposedata->data->heading_settings;
+        $mdata = @$resposedata->data->heading_settings;
 
         if (empty($resposedata->data->block_title)) {
             $resposedata->data->block_title = get_string('displayname', 'block_tb_headings');
         }
-        $this->title = $resposedata->data->block_title;
-        $autoslide = $resposedata->data->autoslide;
+        $this->title = @$resposedata->data->block_title;
+        $autoslide = @$resposedata->data->autoslide;
 
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_headings/js/jquery.min.js'));
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_headings/js/owl.carousel.js'));
-        if($autoslide == 1){
+        if ($autoslide == 1) {
             $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_headings/js/owlslider-auto.js'));
-        }else{
+        } else {
             $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_headings/js/owlslider.js'));
         }
 
@@ -81,27 +81,27 @@ class block_tb_headings extends block_base {
         $this->content = new stdClass();
         $this->content->text = '<div class="tb_headings owl-carousel owl-theme">';
 
-        foreach($mdata as $mdatasing){
+        foreach ($mdata as $mdatasing) {
             $this->content->text .= '<div id="hd_box" class="hd_box">';
 
             $this->content->text .= '<div class="hd_img">';
             $this->content->text .= '<img src="' . $mdatasing->image . '"/>';
             $this->content->text .= '</div>';
-    
+
             $this->content->text .= '<div class="hd_title">';
             $this->content->text .= $mdatasing->setting_title;
             $this->content->text .= '</div>';
-    
+
             $this->content->text .= '<div class="hd_des">';
             $this->content->text .= $mdatasing->description;
             $this->content->text .= '</div>';
 
             $this->content->text .= '<div class="hd_link">';
-            $this->content->text .= '<a href="'.$mdatasing->button_link.'">';
+            $this->content->text .= '<a href="' . $mdatasing->button_link . '">';
             $this->content->text .= $mdatasing->button;
             $this->content->text .= '</a>';
             $this->content->text .= '</div>';
-    
+
             $this->content->text .= '</div>';
         }
 
@@ -129,7 +129,6 @@ class block_tb_headings extends block_base {
     public function applicable_formats() {
         return array('all' => true);
     }
-    
 
     /**
      * Get settings from Leeloo
