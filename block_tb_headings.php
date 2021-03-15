@@ -59,6 +59,15 @@ class block_tb_headings extends block_base {
         $settingsjson = get_config('block_tb_headings')->settingsjson;
 
         $resposedata = json_decode(base64_decode($settingsjson));
+
+        if (!isset($resposedata->data->heading_settings)) {
+            $this->title = get_string('displayname', 'block_tb_headings');
+            $this->content = new stdClass();
+            $this->content->text = '';
+            $this->content->footer = '';
+            return $this->content;
+        }
+
         $mdata = @$resposedata->data->heading_settings;
 
         if (empty($resposedata->data->block_title)) {

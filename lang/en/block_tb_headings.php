@@ -27,3 +27,5 @@ $string['pluginname'] = 'Leeloo LXP Headings';
 $string['displayname'] = 'Leeloo LXP Headings';
 $string['nolicense'] = 'Invalid Leeloo LXP License ID';
 $string['license'] = 'Leeloo LXP License ID';
+
+$string['privacy:metadata'] = 'The Leeloo LXP Headings (tb_headings) block only shows information and does not store data itself.';
