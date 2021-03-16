@@ -25,6 +25,7 @@
 
 $string['pluginname'] = 'Leeloo LXP Headings';
 $string['displayname'] = 'Leeloo LXP Headings';
+$string['blocktitle'] = 'Leeloo LXP Headings';
 $string['nolicense'] = 'Invalid Leeloo LXP License ID';
 $string['license'] = 'Leeloo LXP License ID';
 $string['tb_headings:addinstance'] = 'Add a new Leeloo LXP Headings block';
