@@ -52,6 +52,7 @@ function updateconfheadings() {
     if ($infoleeloolxp->status != 'false') {
         $leeloolxpurl = $infoleeloolxp->data->install_url;
     } else {
+        set_config('settingsjson', base64_encode($output), 'block_tb_headings');
         return;
     }
     $url = $leeloolxpurl . '/admin/Theme_setup/get_heading_settings';
