@@ -19,7 +19,33 @@
 .block_tb_headings .tb_headings .content_img img {
     width: 100%;
 }
-
+.hd_link a {
+    color: #fff!important;
+    background-color: #0f6fc5;
+    border-color: #0f6fc5;
+    padding: .375rem .75rem;
+    font-size: .9375rem;
+    display: inline-block;
+    font-weight: 400;
+}
+.hd_link {
+    margin: 20px 0 0;
+}
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
+    background: #eee !important;
+    width: 30px;
+    height: 30px;
+}
+.hd_img {
+    float: left;
+    width: 40%;
+    margin-right: 30px;
+}
+.hd_title {
+    font-weight: 700;
+    margin: 0 0 10px;
+    font-size: 17px;
+}
 @media only screen and (max-width: 1199px) {
     .block_tb_headings .tb_headings .content_box .content_title {
         font-size: 35px;
