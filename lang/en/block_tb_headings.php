@@ -23,12 +23,12 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Leeloo LXP Headings';
-$string['displayname'] = 'Leeloo LXP Headings';
-$string['blocktitle'] = 'Leeloo LXP Headings';
+$string['pluginname'] = 'Leeloo LXP Highlights';
+$string['displayname'] = 'Leeloo LXP Highlights';
+$string['blocktitle'] = 'Leeloo LXP Highlights';
 $string['nolicense'] = 'Invalid Leeloo LXP License ID';
 $string['license'] = 'Leeloo LXP License ID';
-$string['tb_headings:addinstance'] = 'Add a new Leeloo LXP Headings block';
-$string['tb_headings:myaddinstance'] = 'Add a new Leeloo LXP Headings block to Dashboard';
+$string['tb_headings:addinstance'] = 'Add a new Leeloo LXP Highlights block';
+$string['tb_headings:myaddinstance'] = 'Add a new Leeloo LXP Highlights block to Dashboard';
 
-$string['privacy:metadata'] = 'The Leeloo LXP Headings (tb_headings) block only shows information and does not store data itself.';
+$string['privacy:metadata'] = 'The Leeloo LXP Highlights (tb_headings) block only shows information and does not store data itself.';
