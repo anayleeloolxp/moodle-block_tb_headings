@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Fetch and Update Configration From L
  */
-function updateconfheadings() {
+function block_tb_headings_updateconf() {
     if (isset(get_config('block_tb_headings')->license)) {
         $leeloolxplicense = get_config('block_tb_headings')->license;
     } else {
