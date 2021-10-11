@@ -33,7 +33,7 @@ if ($ADMIN->fulltree) {
         get_string('license', 'block_tb_headings'),
         0
     );
-    $setting->set_updatedcallback(block_tb_headings_updateconf());
+    //$setting->set_updatedcallback(block_tb_headings_updateconf());
     $settings->add($setting);
 
     $setting = new admin_setting_configheadings('block_tb_headings/settingsjson', '', '', '', PARAM_RAW);
