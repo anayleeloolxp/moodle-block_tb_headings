@@ -25,8 +25,6 @@
 
 namespace block_tb_headings\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Privacy Subsystem for block_tb_headings implementing null_provider.
  *
