@@ -79,7 +79,13 @@ class block_tb_headings extends block_base {
                 $resposedata->data->block_title = '';
             }
         }
-        $this->title = @$resposedata->data->block_title;
+
+        $summaryformatoptions = new stdClass();
+        $summaryformatoptions->noclean = false;
+        $summaryformatoptions->overflowdiv = false;
+        $summaryformatoptions->filter = true;
+
+        $this->title = format_text(@$resposedata->data->block_title, 1, $summaryformatoptions);
         $autoslide = @$resposedata->data->autoslide;
 
         $this->page->requires->jquery();
@@ -101,16 +107,16 @@ class block_tb_headings extends block_base {
             $this->content->text .= '</div>';
 
             $this->content->text .= '<div class="hd_title">';
-            $this->content->text .= $mdatasing->setting_title;
+            $this->content->text .= format_text($mdatasing->setting_title, 1, $summaryformatoptions);
             $this->content->text .= '</div>';
 
             $this->content->text .= '<div class="hd_des">';
-            $this->content->text .= $mdatasing->description;
+            $this->content->text .= format_text($mdatasing->description, 1, $summaryformatoptions);
             $this->content->text .= '</div>';
 
             $this->content->text .= '<div class="hd_link">';
             $this->content->text .= '<a href="' . $mdatasing->button_link . '">';
-            $this->content->text .= $mdatasing->button;
+            $this->content->text .= format_text($mdatasing->button, 1, $summaryformatoptions);
             $this->content->text .= '</a>';
             $this->content->text .= '</div>';
 
